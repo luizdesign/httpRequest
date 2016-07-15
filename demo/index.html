@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+    <head>
+        <meta charset="UTF-8" />
+        <title>HttpRequest Demo</title>
+    </head>
+    <body>
+        <script type="text/javascript" src="../dist/httpRequest.js"></script>
+        <script type="text/javascript">
+            var http = new HttpRequest({
+                'url': 'response.json',
+                'success': function (response) {
+                    'use strict';
+
+                    console.log(JSON.parse(response).status);
+                }
+            });
+            http.setHeader('Accept', 'application/json');
+            http.send();
+        </script>
+    </body>
+</html>
